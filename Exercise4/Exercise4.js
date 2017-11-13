@@ -1,12 +1,11 @@
 var fs = require('fs')
-var filepath = process.argv[2];
+var path = require('path')
 
-fs.readFile(filepath, function callback(err,data){
+var ext= process.argv[3];
+var dir = process.argv[2];
+
+fs.readdir(dir, function callback(err, data){
     if(err) return err;
     
-    var str = data.toString();
-    var arr = str.split('\n');
-    var l = arr.length-1;
-    
-    console.log(l);
+    console.log(data);
 })
